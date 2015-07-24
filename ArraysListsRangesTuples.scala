@@ -11,7 +11,7 @@ var lunchOptions = new Array[String](4)
 lunchOptions(0) = "Chipotle"
 lunchOptions(1) = "Five Points Pizza"
 lunchOptions(2) = "Hattie B's"
-lunchOptions(3) = "The Pharmacy"
+lunchOptions(3) = "The Pharmacy Burger Parlor and Beer Garden"
 printItems("Where do you want to eat?", lunchOptions)
 
 //or you can define an array and it's values all at once
@@ -24,7 +24,7 @@ printItems("Worst parking lot ever", chiptoleParkingSpots)
 
 //or you can create a List with values
 val fivePointsBeers = List("Calfkiller", "Jackalope Bearwalker", "")
-printItems("Five points is legit", fivePointsBeers)
+printItems("Five points is even more legit", fivePointsBeers)
 
 //you can create an empty list with Nil
 val hattieBsEmptyTables = Nil
@@ -43,7 +43,18 @@ println(s"The rest = ${pharmacySuggestions.tail}")
 
 //you can make a range with the to keyword
 val chipotlePriceRange = 9 to 12
-println(s"I usually spend ${chipotlePriceRange} at Chipotle.")
+println(s"I usually spend ${chipotlePriceRange} dollars at Chipotle.")
 
 //you can make a range with until to make the upper limit exclusive
-val 
+val hattieBsPriceRange = 9 until 12
+println(s"At Hattie B's i spend ${hattieBsPriceRange} dollars.")
+
+//tuples can be created with values separate by commas surrounded by parentheses
+val danielsFavoriteFivePointsPizza = ("Vodka Sauce", 25)
+
+//or you can create a tuple using the relation operator ->
+val pharmacySuggestion = "Pharmacy Burger" -> "Tator Tots"
+
+//you can access elements in a tuple using it's index starting with 1
+val pharmacySuggestedEntre = pharmacySuggestion._1  // Pharmacy Burger
+val pharmacySuggestedSide = pharmacySuggestion._2   // Tator Tots

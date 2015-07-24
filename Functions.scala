@@ -1,12 +1,15 @@
+//def starts the function definition
+//= separates the signature from the body
 def greeting() =  { "Well met!" }
 
 //you can invoke it with parentheses
-println(greeting())
+greeting()
 
 //or you can leave them out
-println(greeting)
+greeting
 
-//optional return type
+//you can add an optional return type in the form
+//: RETURN_TYPE
 def threaten(): String = { "My magic will tear you apart!" }
 
 //you can remove the curly braces for one-liners
@@ -16,7 +19,7 @@ def oops() = "That was a mistake."
 def sorry = "My apologies."
 
 //but you have to call it without the parentheses
-println(sorry)
+sorry
 
 //spoiler alert: functions can have parameters
 def playAnimalCompanion(timesPlayed: Int) = {
@@ -28,9 +31,8 @@ def playAnimalCompanion(timesPlayed: Int) = {
   }
 }
 
-//me go face?
-println(playAnimalCompanion(0))
-println(playAnimalCompanion(1))
+playAnimalCompanion(0)  // Huffer
+playAnimalCompanion(1)  // Another Huffer
 
 //functions can have multiple parameters too
 def matchmaking(ranking: String, deck: String) = {
@@ -42,4 +44,4 @@ def matchmaking(ranking: String, deck: String) = {
 }
 
 //the struggle is real
-println(matchmaking("Rank 2", "Grim Patron Warrior"))
+println(matchmaking("Rank 2", "Grim Patron Warrior"))  // (Legendary or Rank 1, Handlock)
