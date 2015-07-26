@@ -20,6 +20,10 @@ else {
 }
 println
 
+//almost everything is an expression in Scala, even if-else
+val secret = true
+val name = if(secret) "Superman" else "Clark Kent"
+
 //while loop
 var i = 0
 var superHeroes = Array[String]("Superman", "Wonder Woman", "Thor", "Iron Man", "Black Widow", "The Hulk", "Green Lantern")
@@ -32,29 +36,33 @@ println
 //do-while loop
 println
 i = 0
-val superHeroIdentities = Array[String]("Clark Kent", "Diana Prince", "Thor Odinson", "Tony Stark", "Natasha Romanova", "Bruce Banner", "Alan Scott")
+val superHeroIdentities = Array[String]("Clark Kent", "Diana Prince",
+  "Thor Odinson", "Tony Stark", "Natasha Romanova", "Bruce Banner",
+  "Alan Scott")
 do {
   println(s"${superHeroIdentities(i)}")
   i += 1;
 } while(i < superHeroes.length)
 println
 
-//for expression..notice that the first println is the only expression in the loop
-val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"), ("Black Widow", "Avengers"), ("Gambit", "X-Men"), ("Green Lantern", "Justice League"))
+//for comprehension
+val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
+  ("Black Widow", "Avengers"), ("Gambit", "X-Men"),
+  ("Green Lantern", "Justice League"))
 for(heroProfile <- heroProfiles) {
   print(s"${heroProfile._1}, ")
   print(s"${heroProfile._2}\n")
 }
 println
 
-//for expression filter
+//for comprehension filter
 for(heroProfile <- heroProfiles
     if heroProfile._2.contains("Avengers")
    )
   println(s"${heroProfile._1}, ${heroProfile._2}")
 println
 
-//for expression variable binding
+//for comprehension variable binding
 for{heroProfile <- heroProfiles
     heroName = heroProfile._1.toUpperCase()}
   println(s"${heroName}!!!")
