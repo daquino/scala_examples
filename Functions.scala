@@ -1,4 +1,4 @@
-//def starts the function definition
+//functions take the form (param1, paramN) => { body }
 //= separates the signature from the body
 val greeting = () => { "Well met!" }
 
