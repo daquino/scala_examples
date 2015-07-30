@@ -23,8 +23,8 @@ val chiptoleParkingSpots: List[Nothing] = List()
 printItems("Worst parking lot ever", chiptoleParkingSpots)
 
 //or you can create a List with values
-val fivePointsBeers = List("Calfkiller", "Jackalope Bearwalker", "")
-printItems("Five points is even more legit", fivePointsBeers)
+val fivePointsBeers = List("Calfkiller", "Jackalope Bearwalker", "Einstok Pale Ale")
+printItems("Five points is legit", fivePointsBeers)
 
 //you can create an empty list with Nil
 val hattieBsEmptyTables = Nil

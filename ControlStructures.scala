@@ -20,13 +20,23 @@ else {
 }
 println
 
-//almost everything is an expression in Scala, even if-else
-val secret = true
-val name = if(secret) "Superman" else "Clark Kent"
+//if-elseif-else as an expression
+val alias = "The Flash"
+val identity = if (alias == "Green Arrow") {
+  "Oliver Queen"
+}
+else if(alias == "The Flash") {
+  "Barry Allen"
+}
+else {
+  "Who?"
+}
+println(s"Identity = ${identity}\n")
 
 //while loop
 var i = 0
-var superHeroes = Array[String]("Superman", "Wonder Woman", "Thor", "Iron Man", "Black Widow", "The Hulk", "Green Lantern")
+var superHeroes = Array[String]("Superman", "Wonder Woman", "Thor", "Iron Man",
+  "Black Widow", "The Hulk", "Green Lantern")
 while(i < superHeroes.length) {
   println(s"${superHeroes(i)}")
   i += 1;
@@ -45,10 +55,11 @@ do {
 } while(i < superHeroes.length)
 println
 
-//for comprehension
 val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
   ("Black Widow", "Avengers"), ("Gambit", "X-Men"),
   ("Green Lantern", "Justice League"))
+
+//for comprehension
 for(heroProfile <- heroProfiles) {
   print(s"${heroProfile._1}, ")
   print(s"${heroProfile._2}\n")
@@ -68,7 +79,7 @@ for{heroProfile <- heroProfiles
   println(s"${heroName}!!!")
 println
 
-//for expression yielding can generate new collections
+//for comprehension yielding can generate new collections
 var justiceLeagueMembers = for{
   heroProfile <- heroProfiles
   if heroProfile._2.contains("Justice League")
@@ -92,8 +103,11 @@ finally {
 println
 
 //match expressions
-val heroWeakness = ("Iron Man", "Crippled Heart")
-heroWeakness match {
-  case (name, "Crippled Heart") => println(s"A crippled heart is also one of ${name}'s strengths")
-  case (name, weakness) => println(s"${name} is weak against ${weakness}")
+val heroWeaknesses = List(("Iron Man", "Crippled Heart"), ("Superman", "kryptonite"),
+  ("Green Lantern", "the color yellow"))
+for(heroWeakness <- heroWeaknesses) {
+  heroWeakness match {
+    case (name, "Crippled Heart") => println(s"A crippled heart is also one of ${name}'s strengths")
+    case (name, weakness) => println(s"${name} is weak against ${weakness}.")
+  }
 }

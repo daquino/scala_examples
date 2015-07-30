@@ -1,5 +1,4 @@
-//functions take the form (param1, paramN) => { body }
-//= separates the signature from the body
+//functions take the form (param1, param2, paramN) => { body }
 val greeting = () => { "Well met!" }
 
 //you can invoke it with parentheses
@@ -8,9 +7,9 @@ println(greeting())
 //leaving the parenthesis out returns the type
 println(greeting)
 
-//you can add an optional return type in the form
-//: RETURN_TYPE
-val threaten = () => { "My magic will tear you apart!" }
+//you can add an optional explicit return type in the form
+//: paramType => returnType
+val threaten: () => String = () => { "My magic will tear you apart!" }
 println(threaten())
 
 //you can remove the curly braces for one-liners

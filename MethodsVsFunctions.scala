@@ -5,6 +5,7 @@ class Paladin {
 }
 
 val p = new Paladin()
-p.greet
+println(p.greet)
 println(p.threaten)
+p.greet
 p.threaten()
