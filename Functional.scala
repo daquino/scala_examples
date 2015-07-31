@@ -1,14 +1,23 @@
 //higher order functions
-val calculate = (f: (Int, Int) => Int, x: Int, y: Int) => f(x, y)
+val map = (list: List[Int], f: Int => Int) => {
+  for(item <- list) yield f(item)
+}
 
-val add = (x: Int, y: Int) => x + y
-val subtract = (x: Int, y: Int) => x - y
+val double = (x: Int) => x * 2
+val square = (x: Int) => x * x
 
-println(calculate(add, 5, 6))
-println(calculate(subtract, 10, 5))
+val list = List(1, 2, 3)
+
+val doubleList = map(list, double)
+val squaredList = map(list, square)
+
+println(s"Double list = ${doubleList}")
+println(s"Squared list = ${squaredList}")
 
 //function returning a function
 val selectOperation: (String) => ((Int, Int) => Int) = (operator: String) => {
+  val add = (x: Int, y: Int) => x + y
+  val subtract = (x: Int, y: Int) => x - y
   if(operator == "+") {
     add
   }
@@ -23,6 +32,7 @@ println(addition(5, 10))
 println(subtraction(10, 5))
 
 //curried function
+val add = (x: Int, y: Int) => x + y
 val incrementByTwo = add.curried(2)
 println(incrementByTwo(5))
 
