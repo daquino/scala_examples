@@ -37,9 +37,11 @@ printItems("Hattie B's Heat Levels", hattieBsHeatLevels)
 //you can get the head and tail of a list where the head is the first element
 //of the list and tail is the rest
 val pharmacySuggestions = "Pharmacy Burger" :: "Farm Burger" :: "Curry wurst" :: "Rootbeer Float" :: Nil
+val firstItem = pharmacySuggestions.head
+val everythingAfterwards = pharmacySuggestions.tail
 println
-println(s"First suggestion = ${pharmacySuggestions.head}")
-println(s"The rest = ${pharmacySuggestions.tail}")
+println(s"First suggestion = ${firstItem}")
+println(s"The rest = ${everythingAfterwards}")
 
 //you can make a range with the to keyword
 val chipotlePriceRange = 9 to 12
