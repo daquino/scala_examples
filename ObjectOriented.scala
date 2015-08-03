@@ -1,7 +1,7 @@
 //defining a simple class
-class Animal(name: String) {
+class Animal(animalType: String) {
   def this() = this("Unknown")
-  override def toString() =  s"${name}"
+  override def toString() =  s"${animalType}"
 }
 
 val dog = new Animal("dog")
@@ -16,22 +16,22 @@ val horse = new Horse
 println(horse)
 
 //read-only instance variable
-class ImmutableAnimal(val name: String) extends Animal(name)
+class ImmutableAnimal(val animalType: String) extends Animal(animalType)
 
 val monkey = new ImmutableAnimal("monkey")
-println(monkey.name)
+println(monkey.animalType)
 
 // instance variable
-class MutableAnimal(var name: String) extends Animal(name)
+class MutableAnimal(var animalType: String) extends Animal(animalType)
 
 val animal = new MutableAnimal("lion")
-animal.name = "mountain lion"
-println(animal.name)
+animal.animalType = "mountain lion"
+println(animal.animalType)
 
 //here's an example of an abstract class
-abstract class AbstractAnimal(name: String) {
+abstract class AbstractAnimal(animalType: String) {
   def greet()
-  override def toString() = name
+  override def toString() = animalType
 }
 
 class Elephant extends AbstractAnimal("elephant") {
@@ -117,47 +117,10 @@ class Eagle extends Animal("eagle") with Legs with Wings
 val eagle = new Eagle
 eagle.move
 eagle.walk
+eagle.takeFlight
 
 //multiple inheritance during instantiation
 val caique = new Animal("caique") with Wings with Legs
 caique.move
+caique.walk
 caique.takeFlight
-
-//trait stacking
-import scala.collection.mutable.ArrayBuffer
-abstract class Queue[T] {
-  def get(): T
-  def put(item: T)
-}
-
-class IntQueue extends Queue[Int] {
-  private val buf = new ArrayBuffer[Int]
-  def get() = buf.remove(0)
-  def put(item: Int) = buf += item
-}
-
-val queue = new IntQueue
-queue.put(1)
-queue.put(2)
-println(queue.get)
-println(queue.get)
-
-trait Doubling extends Queue[Int] {
-  abstract override def put(item: Int) = super.put(item * 2)
-}
-
-trait Incrementing extends Queue[Int] {
-  abstract override def put(item: Int) = super.put(item + 1)
-}
-
-val doublingQueue = new IntQueue with Doubling
-doublingQueue.put(1)
-doublingQueue.put(2)
-println(doublingQueue.get)
-println(doublingQueue.get)
-
-val incrementingDoubleQueue = new IntQueue with Doubling with Incrementing
-incrementingDoubleQueue.put(1)
-incrementingDoubleQueue.put(2)
-println(incrementingDoubleQueue.get)
-println(incrementingDoubleQueue.get)

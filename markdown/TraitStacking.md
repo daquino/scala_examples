@@ -1,0 +1,40 @@
+### you can stack traits to compose functionality
+```scala
+import scala.collection.mutable.ArrayBuffer
+abstract class Queue[T] {
+  def get(): T
+  def put(item: T)
+}
+
+class IntQueue extends Queue[Int] {
+  private val buf = new ArrayBuffer[Int]
+  def get() = buf.remove(0)
+  def put(item: Int) = buf += item
+}
+
+val queue = new IntQueue
+queue.put(1)
+queue.put(2)
+println(queue.get)  // 1
+println(queue.get)  // 2
+
+trait Doubling extends Queue[Int] {
+  abstract override def put(item: Int) = super.put(item * 2)
+}
+
+trait Incrementing extends Queue[Int] {
+  abstract override def put(item: Int) = super.put(item + 1)
+}
+
+val doublingQueue = new IntQueue with Doubling
+doublingQueue.put(1)
+doublingQueue.put(2)
+println(doublingQueue.get)  // 2
+println(doublingQueue.get)  // 4
+
+val incrementingDoubleQueue = new IntQueue with Doubling with Incrementing
+incrementingDoubleQueue.put(1)
+incrementingDoubleQueue.put(2)
+println(incrementingDoubleQueue.get)  // 4
+println(incrementingDoubleQueue.get)  // 6
+```

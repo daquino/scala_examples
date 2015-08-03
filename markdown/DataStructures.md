@@ -10,22 +10,17 @@ lunchOptions(3) = "The Pharmacy Burger Parlor and Beer Garden"
 printItems("Where do you want to eat?", lunchOptions)
 ```
 
-### or you can define an array and it's values all at once
+### You can also create array with the Array(...) factory method
 ```scala
 val chipotleSaladIngredients = Array("Lettuce", "Chicken", "Chicken", "Fajita Veggies", "Corn", "Cheese", "Guac")
 ```
 
-### you can create a List the traditional way
-```scala
-val chiptoleParkingSpots: List[Nothing] = List()
-```
-
-### or you can create a List with values
+### List also has a factor method
 ```scala
 val fivePointsBeers = List("Calfkiller", "Jackalope Bearwalker", "Einstok Pale Ale")
 ```
 
-### you can create an empty list with Nil
+### Nil can represent the empty list
 ```scala
 val hattieBsEmptyTables = Nil
 ```
@@ -37,28 +32,28 @@ val hattieBsHeatLevels = "Southern Heat" :: "Mild or Medium" :: "Hot" :: "Damn H
 
 ### you can get the head and tail of a list where the head is the first element of the list and tail is the rest
 ```scala
-val pharmacySuggestions = "Pharmacy Burger" :: "Farm Burger" :: "Curry wurst" :: "Rootbeer Float" :: Nil
+val pharmacySuggestions = List("Pharmacy Burger", "Farm Burger", "Curry wurst", "Rootbeer Float")
 val firstItem = pharmacySuggestions.head
 val everythingAfterwards = pharmacySuggestions.tail
 ```
 
-### you can make a range with the to keyword
+### Simple Map example
 ```scala
-val chipotlePriceRange = 9 to 12
+val fivePointsPieMenu = Map("Vodka Sauce" -> 25, "Hot Hawaiian" -> 23)  // creates a map of Pizza -> Price
+val vodkaSaucePrice = fivePointsPieMenu("Vodka Sauce")                  // 25
+val fivePointsUpdatedPieMenu = fivePointsPieMenu + ("T-Rex" -> 25)      // creates new map with T-Rex appended
+val danielsFavoritePizzas = fivePointsUpdatedPieMenu - "Hot Hawaiian"   // creates new map without Hot Hawaiian
 ```
 
-### you can make a range with until to make the upper limit exclusive
+### Inclusive or exclusive ranges
 ```scala
+val chipotlePriceRange = 9 to 12
 val hattieBsPriceRange = 9 until 12
 ```
 
-### tuples can be created with values separate by commas surrounded by parentheses
+### You create tuples either by using parentheses or using the relation operator
 ```scala
 val danielsFavoriteFivePointsPizza = ("Vodka Sauce", 25)
-```
-
-### or you can create a tuple using the relation operator ->
-```scala
 val pharmacySuggestion = "Pharmacy Burger" -> "Tator Tots"
 ```
 

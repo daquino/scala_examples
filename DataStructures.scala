@@ -43,6 +43,12 @@ println
 println(s"First suggestion = ${firstItem}")
 println(s"The rest = ${everythingAfterwards}")
 
+//map example
+val fivePointsPieMenu = Map("Vodka Sauce" -> 25, "Hot Hawaiian" -> 23)
+val vodkaSaucePrice = fivePointsPieMenu("Vodka Sauce")
+val fivePointsUpdatedPieMenu = fivePointsPieMenu + ("T-Rex" -> 25)
+val danielsFavoritePizzas = fivePointsUpdatedPieMenu - "Hot Hawaiian"
+
 //you can make a range with the to keyword
 val chipotlePriceRange = 9 to 12
 println(s"I usually spend ${chipotlePriceRange} dollars at Chipotle.")

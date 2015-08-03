@@ -53,7 +53,7 @@ while(i < superHeroes.length) {
 
 ### do-while loop
 ```scala
-i = 0
+var i = 0
 val superHeroIdentities = Array[String]("Clark Kent", "Diana Prince",
   "Thor Odinson", "Tony Stark", "Natasha Romanova", "Bruce Banner",
   "Alan Scott")
