@@ -49,14 +49,6 @@ val vodkaSaucePrice = fivePointsPieMenu("Vodka Sauce")
 val fivePointsUpdatedPieMenu = fivePointsPieMenu + ("T-Rex" -> 25)
 val danielsFavoritePizzas = fivePointsUpdatedPieMenu - "Hot Hawaiian"
 
-//you can make a range with the to keyword
-val chipotlePriceRange = 9 to 12
-println(s"I usually spend ${chipotlePriceRange} dollars at Chipotle.")
-
-//you can make a range with until to make the upper limit exclusive
-val hattieBsPriceRange = 9 until 12
-println(s"At Hattie B's i spend ${hattieBsPriceRange} dollars.")
-
 //tuples can be created with values separate by commas surrounded by parentheses
 val danielsFavoriteFivePointsPizza = ("Vodka Sauce", 25)
 

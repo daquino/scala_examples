@@ -45,12 +45,6 @@ val fivePointsUpdatedPieMenu = fivePointsPieMenu + ("T-Rex" -> 25)      // creat
 val danielsFavoritePizzas = fivePointsUpdatedPieMenu - "Hot Hawaiian"   // creates new map without Hot Hawaiian
 ```
 
-### Inclusive or exclusive ranges
-```scala
-val chipotlePriceRange = 9 to 12
-val hattieBsPriceRange = 9 until 12
-```
-
 ### You create tuples either by using parentheses or using the relation operator
 ```scala
 val danielsFavoriteFivePointsPizza = ("Vodka Sauce", 25)
