@@ -8,7 +8,7 @@ val greeting = () => { "Well met!" }
 println(greeting())
 ```
 
-### you can add an optional explicit return type
+### you can add an optional explicit function type
 ```scala
 val threaten: () => String = () => { "My magic will tear you apart!" }
 println(threaten())

@@ -24,7 +24,7 @@ val fridayLunch = appendedLunchOptions(2)
 printItems("Lunch", updatedLunchOptions)
 
 //you can create a List the traditional way
-val chiptoleParkingSpots = Nil
+val chiptoleAvailableParkingSpots = Nil
 printItems("Worst parking lot ever", chiptoleParkingSpots)
 
 //or you can create a List with values

@@ -28,7 +28,7 @@ val everythingAfterwards = fivePointsBeers.tail
 
 ### Nil can represent the empty list
 ```scala
-val chipotleEmptyParkingSpots = Nil
+val chipotleAvailableParkingSpots = Nil
 ```
 
 ### Simple Map example
