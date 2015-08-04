@@ -13,7 +13,7 @@ println(s"Identity = ${identity}\n")
 
 //while loop
 var i = 0
-var superHeroes = Array[String]("Superman", "Wonder Woman", "Thor", "Iron Man",
+var superHeroes = Vector("Superman", "Wonder Woman", "Thor", "Iron Man",
   "Black Widow", "The Hulk", "Green Lantern")
 while(i < superHeroes.length) {
   println(s"${superHeroes(i)}")
@@ -26,32 +26,13 @@ val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
   ("Green Lantern", "Justice League"))
 
 //for comprehension
-for(heroProfile <- heroProfiles) {
-  print(s"${heroProfile._1}, ")
-  print(s"${heroProfile._2}\n")
-}
+val avengers = for {
+                 heroProfile <- heroProfiles
+                 if heroProfile._2.contains("Avengers")
+                 heroName = heroProfile._1.toUpperCase()
+               } yield heroName
+println(s"Avengers = ${avengers}")
 println
-
-//for comprehension filter
-for(heroProfile <- heroProfiles
-    if heroProfile._2.contains("Avengers")
-   )
-  println(s"${heroProfile._1}, ${heroProfile._2}")
-println
-
-//for comprehension variable binding
-for{heroProfile <- heroProfiles
-    heroName = heroProfile._1.toUpperCase()}
-  println(s"${heroName}!!!")
-println
-
-//for comprehension yielding can generate new collections
-var justiceLeagueMembers = for{
-  heroProfile <- heroProfiles
-  if heroProfile._2.contains("Justice League")
-} yield heroProfile
-
-println(justiceLeagueMembers)
 
 //try expressions
 var heroes = Vector("Human Torch", "Thing")

@@ -18,7 +18,7 @@ else {
 ### simple while loop
 ```scala
 var i = 0
-var superHeroes = Array[String]("Superman", "Wonder Woman", "Thor", "Iron Man",
+var superHeroes = Vector("Superman", "Wonder Woman", "Thor", "Iron Man",
   "Black Widow", "The Hulk", "Green Lantern")
 while(i < superHeroes.length) {
   println(s"${superHeroes(i)}")
@@ -28,50 +28,16 @@ while(i < superHeroes.length) {
 
 ### for comprehension (for loop)
 ```scala
-val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
+val heroes = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
   ("Black Widow", "Avengers"), ("Gambit", "X-Men"),
   ("Green Lantern", "Justice League"))
 
-for(heroProfile <- heroProfiles) {
-  print(s"${heroProfile._1}, ")
-  print(s"${heroProfile._2}\n")
-}
-```
-
-### filtering with for comprehension
-```scala
-val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
-  ("Black Widow", "Avengers"), ("Gambit", "X-Men"),
-  ("Green Lantern", "Justice League"))
-
-for(heroProfile <- heroProfiles
-    if heroProfile._2.contains("Avengers")
-   )
-  println(s"${heroProfile._1}, ${heroProfile._2}")
-```
-
-### variable binding with for comprehensions
-```scala
-val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
-  ("Black Widow", "Avengers"), ("Gambit", "X-Men"),
-  ("Green Lantern", "Justice League"))
-
-for(heroProfile <- heroProfiles
-    heroName = heroProfile._1.toUpperCase())
-  println(s"${heroName}!!!")
-```
-
-
-### yielding in for comprehensions to create a new collection
-```scala
-val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
-  ("Black Widow", "Avengers"), ("Gambit", "X-Men"),
-  ("Green Lantern", "Justice League"))
-
-var justiceLeagueMembers = for{
-  heroProfile <- heroProfiles
-  if heroProfile._2.contains("Justice League")
-} yield heroProfile
+val avengers = for {
+                 hero <- heroes
+                 if hero._2.contains("Avengers")
+                 heroName = hero._1.toUpperCase()
+               } yield heroName
+println(s"Avengers = ${avengers}")
 ```
 
 ### try expression

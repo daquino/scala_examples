@@ -21,6 +21,8 @@ val updatedLunchOptions = appendedLunchOptions.updated(0, "Samurai Sushi")
 //access elements of the Vector using ()
 val fridayLunch = appendedLunchOptions(2)
 
+printItems("Lunch", updatedLunchOptions)
+
 //you can create a List the traditional way
 val chiptoleParkingSpots = Nil
 printItems("Worst parking lot ever", chiptoleParkingSpots)
@@ -32,15 +34,6 @@ val fivePointsBeers = List("Calfkiller", "Jackalope Bearwalker", "Einstok Pale A
 val firstBeer = fivePointsBeers.head
 val everythingAfterwards = fivePointsBeers.tail
 printItems("Five points is legit", fivePointsBeers)
-
-//you can get the head and tail of a list where the head is the first element
-//of the list and tail is the rest
-val pharmacySuggestions = List("Pharmacy Burger", "Farm Burger", "Curry wurst", "Root beer Float")
-val firstItem = pharmacySuggestions.head
-val everythingAfterwards = pharmacySuggestions.tail
-println
-println(s"First suggestion = ${firstItem}")
-println(s"The rest = ${everythingAfterwards}")
 
 //map example
 val fivePointsPieMenu = Map("Vodka Sauce" -> 25, "Hot Hawaiian" -> 23)
