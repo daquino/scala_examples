@@ -20,7 +20,7 @@ val horse = new Horse
 println(horse)
 ```
 
-### exposing constructor parameters
+### exposing encapsulated properties
 ```scala
 class ImmutableAnimal(val animalType: String) extends Animal(animalType)
 class MutableAnimal(var animalType: String) extends Animal(animalType)

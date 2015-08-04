@@ -10,13 +10,16 @@ def printItems(title: String, items: Traversable[String]) = {
 val lunchOptions = Vector("Chipotle", "Five Points Pizza", "Hattie B's", "The Pharmacy Burger Parlor and Beer Garden")
 
 //use +: to prepend to the Vector
-val updatedLunchOptions = "Peg Leg Porker" +: lunchOptions
+val prependedLunchOptions = "Peg Leg Porker" +: lunchOptions
 
 //use :+ to append an item to the Vector
-val finalLunchOptions = updatedLunchOptions :+ "Bakersfield"
+val appendedLunchOptions = prependedLunchOptions :+ "Bakersfield"
+
+//use the updated method to create a new vector with the item at the specified index updated
+val updatedLunchOptions = appendedLunchOptions updated (0, "Samurai Sushi")
 
 //access elements of the Vector using ()
-val fridayLunch = finalLunchOptions(2)
+val fridayLunch = appendedLunchOptions(2)
 
 //you can create a List the traditional way
 val chiptoleParkingSpots: List[Nothing] = List()

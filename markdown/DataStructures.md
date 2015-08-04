@@ -5,13 +5,16 @@
 val lunchOptions = Vector("Chipotle", "Five Points Pizza", "Hattie B's", "The Pharmacy Burger Parlor and Beer Garden")
 
 //use +: to prepend to the Vector
-val updatedLunchOptions = "Peg Leg Porker" +: lunchOptions
+val prependedLunchOptions = "Peg Leg Porker" +: lunchOptions
 
 //use :+ to append an item to the Vector
-val finalLunchOptions = updatedLunchOptions :+ "Bakersfield"
+val appendedLunchOptions = prependedLunchOptions :+ "Bakersfield"
+
+//use the updated method to create a new vector with the item at the specified index updated
+val updatedLunchOptions = appendedLunchOptions updated (0, "Samurai Sushi")
 
 //access elements of the Vector using ()
-val fridayLunch = finalLunchOptions(2)
+val fridayLunch = appendedLunchOptions(2)
 ```
 
 ### The easiest way to create a list is by using the List() factory method
@@ -41,8 +44,7 @@ val danielsFavoritePizzas = fivePointsUpdatedPieMenu - "Hot Hawaiian"   // creat
 
 ### You create tuples either by using parentheses or using the relation operator
 ```scala
-val danielsFavoriteFivePointsPizza = ("Vodka Sauce", 25)
-val pharmacySuggestion = "Pharmacy Burger" -> "Tator Tots"
+val pharmacySuggestion = ("Pharmacy Burger", "Tator tots")
 ```
 
 ### you can access elements in a tuple using it's index starting with 1
