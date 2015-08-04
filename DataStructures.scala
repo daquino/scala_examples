@@ -16,22 +16,22 @@ val prependedLunchOptions = "Peg Leg Porker" +: lunchOptions
 val appendedLunchOptions = prependedLunchOptions :+ "Bakersfield"
 
 //use the updated method to create a new vector with the item at the specified index updated
-val updatedLunchOptions = appendedLunchOptions updated (0, "Samurai Sushi")
+val updatedLunchOptions = appendedLunchOptions.updated(0, "Samurai Sushi")
 
 //access elements of the Vector using ()
 val fridayLunch = appendedLunchOptions(2)
 
 //you can create a List the traditional way
-val chiptoleParkingSpots: List[Nothing] = List()
+val chiptoleParkingSpots = Nil
 printItems("Worst parking lot ever", chiptoleParkingSpots)
 
 //or you can create a List with values
 val fivePointsBeers = List("Calfkiller", "Jackalope Bearwalker", "Einstok Pale Ale")
-printItems("Five points is legit", fivePointsBeers)
 
-//you can create an empty list with Nil
-val hattieBsEmptyTables = Nil
-printItems("Empty tables at Hattie B's", hattieBsEmptyTables)
+//you can access the head and tail of a List
+val firstBeer = fivePointsBeers.head
+val everythingAfterwards = fivePointsBeers.tail
+printItems("Five points is legit", fivePointsBeers)
 
 //you can get the head and tail of a list where the head is the first element
 //of the list and tail is the rest

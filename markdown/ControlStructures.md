@@ -76,7 +76,7 @@ var justiceLeagueMembers = for{
 
 ### try expression
 ```scala
-var heroes = Array[String]("Human Torch", "Thing")
+val heroes = Vector("Human Torch", "Thing")
 try {
   println(heroes(2))
 }

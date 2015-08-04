@@ -54,7 +54,7 @@ var justiceLeagueMembers = for{
 println(justiceLeagueMembers)
 
 //try expressions
-var heroes = Array[String]("Human Torch", "Thing")
+var heroes = Vector("Human Torch", "Thing")
 try {
   println(heroes(2))
 }

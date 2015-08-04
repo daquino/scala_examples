@@ -11,7 +11,7 @@ val prependedLunchOptions = "Peg Leg Porker" +: lunchOptions
 val appendedLunchOptions = prependedLunchOptions :+ "Bakersfield"
 
 //use the updated method to create a new vector with the item at the specified index updated
-val updatedLunchOptions = appendedLunchOptions updated (0, "Samurai Sushi")
+val updatedLunchOptions = appendedLunchOptions.updated(0, "Samurai Sushi")
 
 //access elements of the Vector using ()
 val fridayLunch = appendedLunchOptions(2)
@@ -19,19 +19,16 @@ val fridayLunch = appendedLunchOptions(2)
 
 ### The easiest way to create a list is by using the List() factory method
 ```scala
-val fivePointsBeers = List("Calfkiller", "Jackalope Bearwalker", "Einstok Pale Ale")
+val fivePointsBeers = List("Einstok Pale Ale", "Calfkiller", "Jackalope Bearwalker")
+
+//you can access the head and tail of a List
+val firstBeer = fivePointsBeers.head
+val everythingAfterwards = fivePointsBeers.tail
 ```
 
 ### Nil can represent the empty list
 ```scala
-val hattieBsEmptyTables = Nil
-```
-
-### you can get the head and tail of a list where the head is the first element of the list and tail is the rest
-```scala
-val pharmacySuggestions = List("Pharmacy Burger", "Farm Burger", "Curry wurst", "Root beer float")
-val firstItem = pharmacySuggestions.head
-val everythingAfterwards = pharmacySuggestions.tail
+val chipotleEmptyParkingSpots = Nil
 ```
 
 ### Simple Map example
