@@ -1,31 +1,5 @@
 # Control Structures
 
-### Simple if expression
-```scala
-val superHero = "Spider Man"
-if(superHero == "Spider Man") println(s"${superHero} is Peter Parker\n")
-```
-
-### if-elseif-else
-```scala
-val superHero = "Wolverine"
-
-//if-else if-else
-if(superHero == "Batman") {
-  println("Name: Bruce Wayne")
-  println("Team: Justice League")
-}
-else if (superHero == "Wolverine") {
-  println("Name: James Howlett")
-  println("Team: X-Men")
-}
-else {
-  println("Name: ?????")
-  println("Team: ?????")
-}
-```
-
-
 ### if else structures are expressions
 ```scala
 //if-elseif-else as an expression
@@ -51,19 +25,6 @@ while(i < superHeroes.length) {
   i += 1;
 }
 ```
-
-### do-while loop
-```scala
-var i = 0
-val superHeroIdentities = Array[String]("Clark Kent", "Diana Prince",
-  "Thor Odinson", "Tony Stark", "Natasha Romanova", "Bruce Banner",
-  "Alan Scott")
-do {
-  println(s"${superHeroIdentities(i)}")
-  i += 1;
-} while(i < superHeroes.length)
-```
-
 
 ### for comprehension (for loop)
 ```scala

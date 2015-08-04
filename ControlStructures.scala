@@ -1,25 +1,3 @@
-var superHero = "Spider Man"
-
-//simple if
-if(superHero == "Spider Man") println(s"${superHero} is Peter Parker\n")
-
-superHero = "Wolverine"
-
-//if-else if-else
-if(superHero == "Batman") {
-  println("Name: Bruce Wayne")
-  println("Team: Justice League")
-}
-else if (superHero == "Wolverine") {
-  println("Name: James Howlett")
-  println("Team: X-Men")
-}
-else {
-  println("Name: ?????")
-  println("Team: ?????")
-}
-println
-
 //if-elseif-else as an expression
 val superHeroName = "The Flash"
 val identity = if (superHeroName == "Green Arrow") {
@@ -41,18 +19,6 @@ while(i < superHeroes.length) {
   println(s"${superHeroes(i)}")
   i += 1;
 }
-println
-
-//do-while loop
-println
-i = 0
-val superHeroIdentities = Array[String]("Clark Kent", "Diana Prince",
-  "Thor Odinson", "Tony Stark", "Natasha Romanova", "Bruce Banner",
-  "Alan Scott")
-do {
-  println(s"${superHeroIdentities(i)}")
-  i += 1;
-} while(i < superHeroes.length)
 println
 
 val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),

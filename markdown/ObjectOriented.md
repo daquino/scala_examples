@@ -20,17 +20,13 @@ val horse = new Horse
 println(horse)
 ```
 
-### read-only instance variable
+### exposing constructor parameters
 ```scala
 class ImmutableAnimal(val animalType: String) extends Animal(animalType)
+class MutableAnimal(var animalType: String) extends Animal(animalType)
 
 val monkey = new ImmutableAnimal("monkey")
 println(monkey.animalType)
-```
-
-### instance variable
-```scala
-class MutableAnimal(var animalType: String) extends Animal(animalType)
 
 val animal = new MutableAnimal("lion")
 animal.animalType = "mountain lion"
@@ -54,31 +50,6 @@ val elephant = new Elephant
 elephant.greet()
 ```
 
-### use objects to replace static members
-```scala
-class Monkey extends Animal("monkey") {
-  def eat() = {
-    if(Monkey.bananas > 0) {
-      Monkey.bananas -= 1
-      println(s"A monkey ate a banana. ${Monkey.bananas} bananas left.")
-    }
-    else {
-      println("Ran out of bananas")
-    }
-  }
-}
-
-object Monkey {
-  var bananas = 2;
-}
-
-val monkey1 = new Monkey
-val monkey2 = new Monkey
-monkey1.eat()
-monkey2.eat()
-monkey2.eat()
-```
-
 ### Use traits for multiple inheritance
 ```scala
 trait Movable {
@@ -93,30 +64,6 @@ class Bird extends Animal("bird") with Movable {
 
 val bird = new Bird
 bird.move
-```
-
-### you can apply traits during instantiation
-```scala
-class Tiger extends Animal("tiger")
-class Dolphin extends Animal("dolphin")
-trait Legs extends Movable {
-  override def move() = {
-    println(s"The ${this} is running.")
-  }
-  def walk() = {
-    println(s"The ${this} is walking.")
-  }
-}
-trait Fins extends Movable {
-  override def move()  {
-    println(s"The ${this} is swimming.")
-  }
-}
-
-val tiger = new Tiger with Legs
-val dolphin = new Dolphin with Fins
-tiger.move
-dolphin.move
 ```
 
 ### inheriting from multiple traits

@@ -43,29 +43,6 @@ class Elephant extends AbstractAnimal("elephant") {
 val elephant = new Elephant
 elephant.greet()
 
-//use objects to replace static members
-class Monkey extends Animal("monkey") {
-  def eat() = {
-    if(Monkey.bananas > 0) {
-      Monkey.bananas -= 1
-      println(s"A monkey ate a banana. ${Monkey.bananas} bananas left.")
-    }
-    else {
-      println("Ran out of bananas")
-    }
-  }
-}
-
-object Monkey {
-  var bananas = 2;
-}
-
-val monkey1 = new Monkey
-val monkey2 = new Monkey
-monkey1.eat()
-monkey2.eat()
-monkey2.eat()
-
 //traits
 trait Movable {
   def move()
@@ -79,29 +56,6 @@ class Bird extends Animal("bird") with Movable {
 
 val bird = new Bird
 bird.move
-
-//traits during instantiation
-class Tiger extends Animal("tiger")
-class Dolphin extends Animal("dolphin")
-trait Legs extends Movable {
-  override def move() = {
-    println(s"The ${this} is running.")
-  }
-  def walk() = {
-    println(s"The ${this} is walking.")
-  }
-}
-trait Fins extends Movable {
-  override def move()  {
-    println(s"The ${this} is swimming.")
-  }
-}
-
-val tiger = new Tiger with Legs
-val dolphin = new Dolphin with Fins
-tiger.move
-dolphin.move
-
 
 //multiple inheritance
 trait Wings extends Movable {

@@ -1,6 +1,6 @@
 # Data Structures
 
-### Vectors can be used as immutabled indexed sequences
+### Vectors can be used as immutable indexed sequences
 ```scala
 val lunchOptions = Vector("Chipotle", "Five Points Pizza", "Hattie B's", "The Pharmacy Burger Parlor and Beer Garden")
 
