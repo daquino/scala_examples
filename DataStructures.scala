@@ -6,17 +6,17 @@ def printItems(title: String, items: Traversable[String]) = {
   }
 }
 
-//Arrays can be defined by size and assign each element one by one
-var lunchOptions = new Array[String](4)
-lunchOptions(0) = "Chipotle"
-lunchOptions(1) = "Five Points Pizza"
-lunchOptions(2) = "Hattie B's"
-lunchOptions(3) = "The Pharmacy Burger Parlor and Beer Garden"
-printItems("Where do you want to eat?", lunchOptions)
+//Vectors can be used as an immutable indexed sequence
+val lunchOptions = Vector("Chipotle", "Five Points Pizza", "Hattie B's", "The Pharmacy Burger Parlor and Beer Garden")
 
-//or you can define an array and it's values all at once
-val chipotleSaladIngredients = Array("Lettuce", "Chicken", "Chicken", "Fajita Veggies", "Corn", "Cheese", "Guac")
-printItems("What Daniel gets at Chipotle", chipotleSaladIngredients)
+//use +: to prepend to the Vector
+val updatedLunchOptions = "Peg Leg Porker" +: lunchOptions
+
+//use :+ to append an item to the Vector
+val finalLunchOptions = updatedLunchOptions :+ "Bakersfield"
+
+//access elements of the Vector using ()
+val fridayLunch = finalLunchOptions(2)
 
 //you can create a List the traditional way
 val chiptoleParkingSpots: List[Nothing] = List()
@@ -30,13 +30,9 @@ printItems("Five points is legit", fivePointsBeers)
 val hattieBsEmptyTables = Nil
 printItems("Empty tables at Hattie B's", hattieBsEmptyTables)
 
-//you can use the ::(cons) operator and Nil to define a list
-val hattieBsHeatLevels = "Southern Heat" :: "Mild or Medium" :: "Hot" :: "Damn Hot" :: "Shut the cluck up" :: Nil
-printItems("Hattie B's Heat Levels", hattieBsHeatLevels)
-
 //you can get the head and tail of a list where the head is the first element
 //of the list and tail is the rest
-val pharmacySuggestions = "Pharmacy Burger" :: "Farm Burger" :: "Curry wurst" :: "Rootbeer Float" :: Nil
+val pharmacySuggestions = List("Pharmacy Burger", "Farm Burger", "Curry wurst", "Root beer Float")
 val firstItem = pharmacySuggestions.head
 val everythingAfterwards = pharmacySuggestions.tail
 println

@@ -4,9 +4,6 @@ val greeting = () => { "Well met!" }
 //you can invoke it with parentheses
 println(greeting())
 
-//leaving the parenthesis out returns the type
-println(greeting)
-
 //you can add an optional explicit return type in the form
 //: paramType => returnType
 val threaten: () => String = () => { "My magic will tear you apart!" }

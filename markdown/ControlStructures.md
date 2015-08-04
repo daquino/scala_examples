@@ -2,12 +2,13 @@
 
 ### Simple if expression
 ```scala
+val superHero = "Spider Man"
 if(superHero == "Spider Man") println(s"${superHero} is Peter Parker\n")
 ```
 
 ### if-elseif-else
 ```scala
-superHero = "Wolverine"
+val superHero = "Wolverine"
 
 //if-else if-else
 if(superHero == "Batman") {
@@ -28,11 +29,11 @@ else {
 ### if else structures are expressions
 ```scala
 //if-elseif-else as an expression
-val alias = "The Flash"
-val identity = if (alias == "Green Arrow") {
+val superHeroName = "The Flash"
+val identity = if (superHeroName == "Green Arrow") {
   "Oliver Queen"
 }
-else if(alias == "The Flash") {
+else if(superHeroName == "The Flash") {
   "Barry Allen"
 }
 else {
@@ -94,8 +95,8 @@ val heroProfiles = List(("Batman", "Justice League"), ("Iron Man", "Avengers"),
   ("Black Widow", "Avengers"), ("Gambit", "X-Men"),
   ("Green Lantern", "Justice League"))
 
-for{heroProfile <- heroProfiles
-    heroName = heroProfile._1.toUpperCase()}
+for(heroProfile <- heroProfiles
+    heroName = heroProfile._1.toUpperCase())
   println(s"${heroName}!!!")
 ```
 
@@ -128,7 +129,7 @@ finally {
 }
 ```
 
-### match expression
+### pattern matching
 ```scala
 val heroWeaknesses = List(("Iron Man", "Crippled Heart"), ("Superman", "kryptonite"),
   ("Green Lantern", "the color yellow"))

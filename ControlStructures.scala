@@ -21,11 +21,11 @@ else {
 println
 
 //if-elseif-else as an expression
-val alias = "The Flash"
-val identity = if (alias == "Green Arrow") {
+val superHeroName = "The Flash"
+val identity = if (superHeroName == "Green Arrow") {
   "Oliver Queen"
 }
-else if(alias == "The Flash") {
+else if(superHeroName == "The Flash") {
   "Barry Allen"
 }
 else {

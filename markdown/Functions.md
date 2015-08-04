@@ -3,19 +3,12 @@
 ### functions bodies take the form _(param1, param2, paramN) => { body }_
 ```scala
 val greeting = () => { "Well met!" }
-```
 
-### you can invoke it with parentheses
-```scala
+//invoke the function using parentheses
 println(greeting())
 ```
 
-### leaving the parenthesis out returns the type
-```scala
-println(greeting)
-```
-
-### you can add an optional explicit return type in the form __functionName: paramType => returnType__
+### you can add an optional explicit return type
 ```scala
 val threaten: () => String = () => { "My magic will tear you apart!" }
 println(threaten())
@@ -27,7 +20,7 @@ val oops = () => "That was a mistake."
 println(oops())
 ```
 
-### function parameters take the form __name: Type__
+### function with single parameter
 ```scala
 val playAnimalCompanion = (timesPlayed: Int) => {
   if(timesPlayed == 0) {
@@ -42,7 +35,7 @@ println(playAnimalCompanion(0))  // Huffer
 println(playAnimalCompanion(1))  // Another Huffer
 ```
 
-### functions can have multiple parameters too
+### function with multiple parameters
 ```scala
 val matchmaking = (ranking: String, deck: String) => {
   (ranking, deck) match {
